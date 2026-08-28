@@ -63,3 +63,18 @@ class RemediationResult(BaseModel):
     recommended_fix: str
     explanation: str
     preventive_action: str
+
+class BugDiagnosisResult(BaseModel):
+    """
+    Complete diagnosis returned by the orchestration pipeline.
+    """
+
+    severity: str
+    priority: str
+    failure_point: str
+    error_type: str
+    similar_bugs: list[str]
+    probable_root_cause: str
+    confidence: str
+    recommended_fix: str
+    preventive_action: str
